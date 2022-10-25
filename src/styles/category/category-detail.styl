@@ -1,0 +1,121 @@
+@import "../vars.styl"
+
+.category-detail
+  padding-bottom 120px
+
+  @media $media-tablet
+    padding-bottom 100px
+
+  @media $media-tablet-vertical
+    padding-bottom 80px
+
+  @media $media-mobile
+    padding-bottom 64px
+
+  &__title
+    margin-top 24px
+
+    @media $media-mobile
+      margin-top 9px
+
+  &__container
+    margin-top 40px
+    display grid
+    grid-template-columns 1fr auto
+    grid-column-gap 20px
+    grid-row-gap 24px
+    align-items start
+
+    @media $media-mobile
+      margin-top 24px
+      justify-items start
+      grid-template-columns 1fr
+      grid-row-gap 8px
+
+  &__back
+    margin-top 40px
+    display flex
+    align-items center
+    color $link
+    font-size 18px
+    line-height 24px
+    font-weight 800
+    text-decoration underline
+
+    @media $media-mobile
+      margin-top 24px
+      font-size 16px
+      line-height 22px
+
+  &__video
+    width 100%
+    max-height 473px
+    height 100%
+    border-radius 16px
+
+    @media $media-mobile
+      height calc((100vw - 40px) * 0.492)
+
+  &__gallery
+    width 29.6vw
+    max-width 427px
+    max-height 473px
+    position relative
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+    row-gap 16px
+
+    @media $media-mobile
+      width 100%
+      max-width none
+      display grid
+      grid-template-columns 1fr 1fr
+      grid-column-gap 12px
+
+    &-image
+      width calc(50% - 10px)
+      height calc((100% - 16px) / 3)
+
+    &-image:nth-child(1)
+      width 100%
+      height calc((100% - 16px) / 3 * 2)
+
+    &-image, &-image:nth-child(1)
+      @media $media-mobile
+        display none
+        height calc((100vw - 40px) * 0.726 / 2)
+        width 100%
+
+    &-image:nth-child(1), &-image:nth-child(2)
+      @media $media-mobile
+        display block
+
+    &-button
+      padding 0
+      color $link
+      text-decoration underline
+      font-weight 800
+      font-size 18px
+      line-height 24px
+
+      @media $media-mobile
+        font-size 16px
+        line-height 22px
+
+
+  &__modal-button
+    margin-top 24px
+
+    @media $media-mobile
+      margin-top 8px
+
+  &__text
+    font-weight 400
+    font-size 24px
+    line-height 32px
+
+    @media $media-mobile
+      font-size 16px
+      line-height 20px
+

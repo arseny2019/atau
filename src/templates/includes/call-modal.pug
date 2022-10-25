@@ -1,0 +1,29 @@
+.call-modal-overlay
+    .call-modal
+        .call-modal__cross
+        .call-modal__header
+            .call-modal__title Заказать звонок
+            .call-modal__subtitle Наш менеджер свяжется с вами
+                br
+                | в ближайшее время!
+            form
+                .call-modal__form-container
+                    input(type='text' placeholder='Имя').text-input.error
+                    input(type='text' placeholder='+7 (999) 345-11-11').text-input.phone-mask
+                label.privacy-acceptance
+                    input(type='checkbox').hidden
+                    span.accept
+                    | Я принимаю условия
+                    br.hidden-br
+                    a(href='/') Пользовательского соглашения
+                    | &nbsp;и даю своё
+                    | согласие на обработку моей персональной
+                    | информации на условиях, определенных
+                    br.hidden-br
+                    a(href='/')  Политикой конфиденциальности
+                    | .
+                input(type='submit' value='Отправить').form-submit.main-button
+
+
+
+

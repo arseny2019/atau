@@ -1,0 +1,149 @@
+@import "../vars.styl"
+
+.projects
+
+  &__more
+    position relative
+    left 50%
+    transform translateX(-50%)
+    margin 32px 0 120px
+
+    @media $media-tablet
+      margin 24px 0 100px
+
+    @media $media-tablet-vertical
+      margin 24px 0 80px
+
+    @media $media-mobile
+      margin 24px 0 64px
+
+  &__title
+    margin-top 40px
+
+  &__item
+    padding 40px 0 108px
+    display grid
+    grid-template-columns auto 1fr
+    grid-column-gap 20px
+    align-items start
+
+    @media $media-tablet-vertical
+      padding 24px 0 72px
+      grid-column-gap 16px
+
+    @media $media-mobile
+      padding 24px 0 0
+      grid-template-columns 1fr
+      grid-row-gap 56px
+
+    & + &
+      border-top 1px solid #BABABA
+
+      @media $media-mobile
+        border none
+
+    &-content
+      padding 32px 0 24px
+      display flex
+      flex-direction column
+      justify-content space-between
+      min-height 100%
+
+      @media $media-tablet-vertical
+        padding 0
+
+    &-title
+      font-weight 700
+      font-size 32px
+      line-height 36px
+
+      @media $media-tablet-vertical
+        font-size 20px
+        line-height 22px
+
+    &-text
+      margin-top 16px
+      font-weight 500
+      font-size 18px
+      line-height 24px
+
+      @media $media-tablet-vertical
+        margin-top 4px
+        font-weight 400
+        font-size 16px
+        line-height 20px
+
+    &-date
+      margin-top 40px
+      font-weight 400
+      font-size 24px
+      line-height 33px
+
+      @media $media-tablet-vertical
+        display none
+
+  &-slider
+
+    &-arrows
+      position absolute
+      left 0
+      top calc(100% + 24px)
+      display inline-flex
+      column-gap 32px
+
+      @media $media-tablet-vertical
+        top calc(100% + 16px)
+        column-gap 24px
+
+      @media $media-mobile
+        top calc(100% + 8px)
+        left 50%
+        transform translateX(-50%)
+        column-gap 24px
+
+    &-arrow
+      cursor pointer
+      & svg
+        @media $media-tablet-vertical
+          width 40px
+          height 40px
+
+      &_prev
+        transform rotate(180deg)
+
+      &.swiper-button-disabled
+        color $gray-arrow !important
+        cursor not-allowed
+
+  &-slider
+    height 385px
+    width 538px
+
+    @media $media-tablet-vertical
+      width calc(50vw - 48px)
+      height calc((50vw - 48px) * 0.72)
+
+    @media $media-mobile
+      width calc(100vw - 128px)
+      height calc((100vw - 128px) * 0.72)
+
+    &__image
+      height 385px
+      width 100%
+      border-radius 16px
+      object-fit cover
+      object-position center
+
+      @media $media-tablet-vertical
+        border-radius 12px
+        height calc((50vw - 48px) * 0.72)
+
+      @media $media-mobile
+        height calc((100vw - 128px) * 0.72)
+
+  &-slider-container
+    position relative
+
+
+
+

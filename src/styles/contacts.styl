@@ -1,0 +1,139 @@
+@import "vars.styl"
+
+.contacts
+  padding-bottom 120px
+
+  @media $media-tablet
+    padding-bottom 100px
+
+  @media $media-tablet-vertical
+    padding-bottom 80px
+
+  @media $media-mobile
+    padding-bottom 64px
+
+  &__title
+    margin-top 40px
+
+    @media $media-mobile
+      margin-top 24px
+      font-size 36px
+      line-height 38px
+
+  &__grid
+    margin-top 40px
+    display grid
+    grid-template-columns auto 375px
+
+    @media $media-tablet-vertical
+      display block
+
+  &__phone, &__address
+    display flex
+    column-gap 8px
+    align-items center
+    font-weight 700
+    font-size 26px
+    line-height 30px
+
+    @media $media-tablet-vertical
+      font-size 18px
+      line-height 24px
+
+    @media $media-mobile
+      font-size 16px
+      line-height 20px
+
+  &__phone
+    svg
+      width 32px
+      height 32px
+
+      @media $media-tablet-vertical
+        width 24px
+        height 24px
+
+
+  &__address
+    margin-top 24px
+
+    & svg
+      @media $media-tablet-vertical
+        width 24px
+        height 24px
+
+
+  &__socials
+    margin-top 24px
+    display flex
+    column-gap 24px
+
+    & svg
+      width 32px
+      height 32px
+
+      @media $media-tablet-vertical
+        width 24px
+        height 24px
+
+
+  &__map
+    margin-top 40px
+    max-width 1320px
+    max-height 780px
+    width calc(100vw - 120px)
+    height calc((100vw - 120px) * 0.59)
+
+    @media $media-tablet
+      width calc(100vw - 64px)
+      height calc((100vw - 64px) * 0.59)
+
+    @media $media-tablet-vertical
+      width calc(100vw - 48px)
+      height calc((100vw - 48px) * 0.59)
+
+    @media $media-mobile
+      margin-top 32px
+      width calc(100vw - 40px)
+      height calc((100vw - 40px) * 0.59)
+
+  &__features
+    position relative
+    left 60px
+
+    @media $media-tablet
+      left 32px
+
+    @media $media-tablet-vertical
+      margin-top 32px
+      width 244px
+      left -24px
+
+    @media $media-mobile
+      left -20px
+
+  &__feature
+    padding 16px 60px 16px 24px
+    color white
+    font-weight 700
+    font-size 18px
+    line-height 22px
+    background-color #1A2854
+    border-top-left-radius 12px
+    border-bottom-left-radius 12px
+
+    @media $media-tablet-vertical
+      padding 16px 42px 16px 24px
+      font-weight 500
+      font-size 12px
+      line-height 16px
+      border-top-left-radius 0
+      border-bottom-left-radius 0
+      border-top-right-radius 12px
+      border-bottom-right-radius 12px
+
+    & + &
+      margin-top 24px
+
+      @media $media-tablet-vertical
+        margin-top 8px

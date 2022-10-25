@@ -1,0 +1,201 @@
+@import "../vars.styl"
+@import "achievs.styl"
+@import "advantages.styl"
+
+.about
+  margin-top 40px
+  position relative
+
+  &__features
+    position absolute
+    right 0
+    top 136px
+    width 375px
+
+    @media $media-tablet-vertical
+      display none
+
+    &_mobile
+      display none
+
+      @media $media-tablet-vertical
+        display inline-block
+        margin-top 24px
+        position relative
+        left -24px
+        top auto
+
+      @media $media-mobile
+        margin-top 16px
+        width 244px
+        position relative
+        left -20px
+        top auto
+
+      & .about__feature
+
+        @media $media-tablet-vertical
+          border-top-left-radius 0
+          border-bottom-left-radius 0
+          border-top-right-radius 12px
+          border-bottom-right-radius 12px
+
+        @media $media-mobile
+          padding 16px 43px 16px 24px
+          font-size 12px
+          line-height 16px
+
+  &__feature
+    width 100%
+    background-color $dark-blue
+    padding 16px 60px 16px 24px
+    font-size 18px
+    line-height 22px
+    color white
+    border-top-left-radius 12px
+    border-bottom-left-radius 12px
+
+    & + &
+      margin-top 16px
+
+  &__title
+    font-size 64px
+    line-height 72px
+
+    @media $media-tablet-vertical
+      font-size 48px
+      line-height 54px
+
+    @media $media-mobile
+      font-size 36px
+      line-height 38px
+
+  &__text
+    margin-top 36px
+    max-width 760px
+    font-weight 500
+
+    @media $media-tablet
+      max-width 660px
+
+    @media $media-mobile
+      margin-top 16px
+      overflow hidden
+      display -webkit-box
+      -webkit-line-clamp 4
+      -webkit-box-orient vertical
+
+    &_full
+      display block
+
+  &__more
+    display none
+    font-size 16px
+    line-height 22px
+    color $link
+    font-weight 800
+    cursor pointer
+
+    @media $media-mobile
+      margin-top 4px
+      display block
+
+  &__emloyers
+    padding 120px 0
+
+    @media $media-tablet
+      padding 100px 0
+
+    @media $media-tablet-vertical
+      padding 80px 0
+
+    @media $media-mobile
+      padding 64px 0
+
+    &-title
+      text-align center
+
+
+.employers-slider
+  margin-top 40px
+
+  &__image
+    height 226px
+    width 100%
+    object-fit cover
+    object-position center
+    overflow hidden
+    border-radius 16px
+
+    @media $media-tablet
+      height calc((100vw - 104px) / 3 * 0.72)
+
+    @media $media-tablet-vertical
+      height calc((100vw - 68px) / 2 * 0.72)
+
+    @media $media-mobile
+      height calc((100vw - 60px) / 2 * 0.72)
+
+  &__title
+    font-size 26px
+    line-height 30px
+    font-weight 800
+    display block
+    margin-top 16px
+    text-align center
+
+    @media $media-mobile
+      margin-top 8px
+      font-size 17px
+      line-height 20px
+      font-weight 600
+
+  &__subtitle
+    margin-top 4px
+    display block
+    font-size 16px
+    line-height 22px
+    font-weight 400
+    text-align center
+
+    @media $media-mobile
+      font-size 12px
+      line-height 16px
+      font-weight 500
+
+  &-arrow
+    z-index 1
+    cursor pointer
+    width 60px
+    height 60px
+
+    @media $media-mobile
+      width 40px
+      height 40px
+
+    & svg
+      width 100%
+      height 100%
+
+    &_prev
+      transform rotate(180deg)
+
+    &.swiper-button-disabled
+      color $gray-arrow !important
+      cursor not-allowed
+
+
+  &-arrows
+    margin-top 34px
+    position relative
+    left 50%
+    transform translateX(-50%)
+    display inline-flex
+    column-gap 32px
+
+    @media $media-mobile
+      margin-top 24px
+      column-gap 24px
+
+  &-container
+    display flex

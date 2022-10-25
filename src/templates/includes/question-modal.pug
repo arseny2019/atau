@@ -1,0 +1,29 @@
+.question-modal-overlay
+    .question-modal
+        .question-modal__cross
+        .question-modal__header
+            .question-modal__title Оформить заявку
+            .question-modal__subtitle Мы незамедлительно ответим на все интересующие вас вопросы!
+            form
+                .question-modal__form-container
+                    input(type='text' placeholder='Имя').text-input.error
+                    input(type='text' placeholder='+7 (999) 345-11-11').text-input.phone-mask
+                    input(type='text' placeholder='Почта').text-input
+                    textarea(placeholder='Вопрос').text-input.text-area
+                label.privacy-acceptance
+                    input(type='checkbox').hidden
+                    span.accept
+                    | Я принимаю условия&nbsp;
+                    br.hidden-br
+                    a(href='/') Пользовательского соглашения
+                    | &nbsp;и даю своё
+                    | согласие на обработку моей персональной
+                    | информации на условиях, определенных&nbsp;
+                    br.hidden-br
+                    a(href='/') Политикой конфиденциальности
+                    | .
+                input(type='submit' value='Отправить').form-submit.main-button
+
+
+
+

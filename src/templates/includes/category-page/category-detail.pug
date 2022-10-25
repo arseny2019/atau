@@ -1,0 +1,20 @@
+.category-detail
+    .container
+        a(href='/').category-detail__back
+            include ../icons/link-arrow
+            | Инжиниринг
+        h2.category-detail__title Станок для металлообработки с ЧПУ
+        include ../slider-modal
+        .category-detail__container
+            iframe(src="https://vk.com/video_ext.php?oid=-104552297&id=456239278&hash=07dd1ef22400844a&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen).category-detail__video
+            .category-detail__gallery
+                img(src='../../img/category/detail-1.png').category-detail__gallery-image
+                img(src='../../img/category/detail-2.png').category-detail__gallery-image
+                img(src='../../img/category/detail-3.png').category-detail__gallery-image
+            button.category-detail__gallery-button.mobile-only.js-open-modal-slider Посмотреть все фото
+            .category-detail__text
+                | Фрезерные вертикальные ОЦ серии MB-V - это оборудование нового поколения с широким спектром
+                | возможностей. Благодаря своим конструктивным особенностям, повышенной жесткости и прецизионной
+                | точности станки этой серии надежно работают как при черновом силовом, так и при чистовом высокоскоростном фрезеровании.
+            button.category-detail__gallery-button.mobile-hidden.js-open-modal-slider Посмотреть все фото
+        button.category-detail__modal-button.main-button.js-order-form-button Подробнее

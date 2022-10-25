@@ -1,0 +1,25 @@
+section.feedback-section
+    .container
+        h2.feedback-section__title Отзывы
+        .feedback-section__container
+            .feedback-section__author
+                img(id='feedbackAvatar').feedback-section__author-img
+                p(id='feedbackName').feedback-section__author-name Бибов Биба
+            .feedback-section__slider
+                .swiper.feedback-slider
+                    .swiper-wrapper
+                        .swiper-slide.feedback-slider__slide
+                            iframe(src="https://vk.com/video_ext.php?oid=-4878902&id=456239090&hash=0cd755b6c3f0efff&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen).feedback-slider__image
+                            input(type='hidden' value='{"image":"https://lstkcomplekt.ru/wp-content/uploads/2021/04/brovko1.jpg","name":"Никита Никитин","text":"Первый отзыв"}')
+                        .swiper-slide.feedback-slider__slide
+                            iframe(src="https://vk.com/video_ext.php?oid=-4878902&id=456239090&hash=0cd755b6c3f0efff&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen).feedback-slider__image
+                            input(type='hidden' value='{"image":"https://lstkcomplekt.ru/wp-content/uploads/2021/04/brovko1.jpg","name":"Алексей Алексеев","text":"Второй отзыв длинный текст"}')
+                        .swiper-slide.feedback-slider__slide
+                            iframe(src="https://vk.com/video_ext.php?oid=-4878902&id=456239090&hash=0cd755b6c3f0efff&hd=2" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen).feedback-slider__image
+                            input(type='hidden' value='{"image":"https://lstkcomplekt.ru/wp-content/uploads/2021/04/brovko1.jpg","name":"Дмитриев Дмитрий","text":"Третий отзыв"}')
+                button.swiper-button-prev.feedback-slider-arrow.feedback-slider-arrow_prev
+                    include ../icons/slider-arrow_white
+                button.swiper-button-next.feedback-slider-arrow.feedback-slider-arrow_next
+                    include ../icons/slider-arrow_white
+                .swiper-pagination.feedback-slider-pagination
+            div(id='feedbackText').feedback-slider-text Текст слайда

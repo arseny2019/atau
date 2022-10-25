@@ -1,0 +1,47 @@
+@import "fonts.styl"
+
+$Manrope = Manrope, sans-serif
+
+$main-black = #323136;
+$footer-black = #0A060E;
+$link = #24419B;
+$dark-blue = #1A2854;
+$gray-border = #BABABA;
+$gray-arrow = #EDEDED;
+$gray-hover = #EDEDED;
+$blue-hover = #8AA1E9;
+$dark-blue-hover = #2349BF;
+$pagenum-blue = #073EE5;
+$checkbox-blue = #006FFF;
+$gray-text = #C4C4C4;
+$gray-dark = #36405C;
+$gray-sidebar = #878787;
+
+$media-desktop = "(min-width: 1440px)"
+$media-tablet = "(max-width: 1439px)"
+$media-tablet-vertical = "(max-width: 1079px)"
+$media-mobile = "(max-width: 767px)"
+$media-mobile-lg = "(max-width: 560px)"
+$media-mobile-md = "(max-width: 440px)"
+$media-mobile-xs = "(max-width: 375px)"
+
+$font(fs, lh)
+  font-size: fs;
+  line-height: lh;
+
+$navigationFont()
+  font-size: 18px;
+  line-height: 22px;
+
+$regularFont()
+  font-size: 18px;
+  line-height: 24px;
+
+  @media $media-mobile
+    font-size 16px
+    line-height 20px
+
+$smallFont()
+  font-size: 16px;
+  line-height: 22px;
+

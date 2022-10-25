@@ -1,0 +1,21 @@
+section.contacts
+    .container
+        h2.contacts__title Контакты
+        .contacts__grid
+            .contacts__left
+                a(href='tel: 73412777700').contacts__phone
+                    include ../includes/icons/phone
+                    span +7 (3412) 77-77-00
+                .contacts__address
+                    include ../includes/icons/map-pin
+                    span г. Ижевск, Воткинское шоссе, 208
+                .contacts__socials
+                    a(href='https://telegram.com' target='_blank')
+                        include ../includes/icons/telegram
+                    a(href='https://vk.com' target='_blank')
+                        include ../includes/icons/vk
+            .contacts__features
+                .contacts__feature Компания осуществляет деятельность по РФ
+                .contacts__feature Начали свою деятельность в 1995 году
+        .contacts__map
+            iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A4023f181ce46aac87de876421cc671bbdb2986aa63dd67f4c85b745666098bde&amp;source=constructor" width="100%" height="100%" frameborder="0")

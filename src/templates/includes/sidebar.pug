@@ -1,0 +1,25 @@
+.sidebar.sidebar_hidden
+    .sidebar__header
+       a(href='/').sidebar__logo
+       .sidebar__cross
+    .sidebar__content
+       .sidebar__menu
+           a(href='/about.html').sidebar__menu-item.blue-text-hover.active-link О компании
+           a(href='/category-page.html').sidebar__menu-item.blue-text-hover.sidebar__menu-item_logo.sidebar__menu-item_logo-yellow
+               | Инжиниринг
+           a(href='/category-page.html').sidebar__menu-item.blue-text-hover.sidebar__menu-item_logo.sidebar__menu-item_logo-green
+               | Хим. системы
+           a(href='/category-page.html').sidebar__menu-item.blue-text-hover.sidebar__menu-item_logo.sidebar__menu-item_logo-blue
+               | БИО лаборатория
+           a(href='/projects.html').sidebar__menu-item.blue-text-hover Наши работы
+           a(href='/blog.html').sidebar__menu-item.blue-text-hover Новости
+           a(href='/contacts.html').sidebar__menu-item.blue-text-hover Контакты
+       .sidebar__contacts
+           .sidebar__socials
+               a(href='https://telegram.com' target='_blank').blue-text-hover
+                   include ../includes/icons/telegram
+               a(href='https://vk.com' target='_blank').blue-text-hover
+                   include ../includes/icons/vk
+           a(href='tel: 73412777700').sidebar__phone.blue-text-hover
+               include ../includes/icons/phone
+               span +7 (3412) 77-77-00

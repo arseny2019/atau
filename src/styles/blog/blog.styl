@@ -1,0 +1,281 @@
+@import "../vars.styl"
+@import "blog-detail.styl"
+
+.blog
+
+  &__top
+    margin-top 40px
+    display grid
+    grid-template-columns 1fr auto
+    align-items start
+
+    @media $media-tablet
+      grid-column-gap 20px
+      grid-template-columns 1fr 1fr 1fr
+
+    @media $media-tablet-vertical
+      grid-template-columns 1fr
+      grid-row-gap 32px
+
+  &__main
+    @media $media-tablet
+      grid-column span 2
+
+    @media $media-tablet-vertical
+      grid-column span 1
+
+    & .blog__item
+      width 100%
+      padding-right 88px
+
+      @media $media-tablet
+        padding-right 0
+
+      &-image
+        width 762px
+        height 549px
+        max-height none
+        object-position center
+        object-fit cover
+        border-radius 16px
+
+        @media $media-tablet
+          width 100%
+          height calc((100vw - 84px) / 3 * 2 * 0.72)
+
+        @media $media-tablet-vertical
+          height calc((100vw - 48px) * 0.72)
+
+        @media $media-mobile
+          height calc((100vw - 40px) * 0.72)
+
+      &-title
+        margin-top 24px
+        font-size 32px
+        line-height 36px
+        min-height unset
+        font-weight 700
+
+        @media $media-tablet
+          min-height 72px
+
+        @media $media-mobile
+          margin-top 8px
+          font-size 20px
+          line-height 22px
+          font-weight 700
+          min-height unset
+          text-align center
+
+      &-text
+        margin-top 8px
+        font-size 24px
+        line-height 32px
+        font-weight 500
+        display -webkit-box
+        -webkit-box-orient vertical
+        -webkit-line-clamp 3
+        overflow hidden
+
+        @media $media-tablet
+          line-height 34px
+
+        @media $media-mobile
+          margin-top 4px
+          font-size 16px
+          line-height 20px
+          text-align center
+
+      &-link
+        @media $media-mobile
+          position relative
+          left 50%
+          transform translateX(-50%)
+
+  &__secondary
+
+    @media $media-desktop
+      border-left 1px solid #BABABA
+      padding-left 64px
+      display grid
+      grid-template-columns 1fr
+      grid-row-gap 24px
+
+    @media $media-tablet
+      display grid
+      grid-template-columns 1fr
+      grid-row-gap 24px
+
+    @media $media-tablet-vertical
+      grid-template-columns 1fr 1fr
+      grid-column-gap 20px
+
+    & .blog__item
+      @media $media-desktop
+        display flex
+        flex-direction column
+        align-items center
+
+      &-image
+        @media $media-desktop
+          width 315px
+          height 226px
+
+      &-title
+        min-height unset
+        overflow hidden
+        display -webkit-box
+        -webkit-box-orient vertical
+        -webkit-line-clamp 1
+
+        @media $media-tablet-vertical
+          -webkit-line-clamp 3
+
+  &__grid
+    margin-top 40px
+    display grid
+    grid-template-columns 1fr 1fr 1fr
+    grid-column-gap 20px
+    grid-row-gap 40px
+
+    @media $media-tablet-vertical
+      grid-template-columns 1fr 1fr
+      grid-row-gap 24px
+
+    @media $media-mobile
+      margin-top 32px
+
+
+  &__item
+    &-image
+      width 100%
+      height calc((100vw - 160px) / 3 * 0.72)
+      max-height 310px
+      object-position center
+      object-fit cover
+      border-radius 16px
+
+      @media $media-tablet-vertical
+        height calc((100vw - 68px) / 2 * 0.72)
+
+    &-title
+      margin-top 16px
+      font-size 26px
+      line-height 30px
+      font-weight 700
+      min-height 60px
+
+      @media $media-tablet
+        font-size 24px
+        line-height 28px
+        min-height 56px
+
+
+      @media $media-mobile
+        margin-top 8px
+        font-size 17px
+        line-height 20px
+        font-weight 600
+        min-height 40px
+
+      @media $media-mobile-md
+        min-height 60px
+
+    &-text
+      margin-top 8px
+      font-size 18px
+      line-height 24px
+      font-weight 500
+      display -webkit-box
+      -webkit-box-orient vertical
+      -webkit-line-clamp 2
+      overflow hidden
+
+      @media $media-mobile
+        margin-top 2px
+        font-size 12px
+        line-height 16px
+
+    &-link
+      display inline-block
+      margin-top 8px
+      font-size 18px
+      line-height 24px
+      font-weight 800
+      text-decoration underline
+      color $link
+      cursor pointer
+
+      & span:nth-child(1)
+
+        @media $media-mobile
+          display none
+
+      & span:nth-child(2)
+        display none
+
+        @media $media-mobile
+          display inline
+
+      @media $media-mobile
+        margin-top 4px
+        font-size 16px
+        line-height 22px
+
+  &__more
+    margin-top 40px
+    margin-bottom 120px
+    position relative
+    left 50%
+    transform translateX(-50%)
+
+    @media $media-tablet
+      margin-bottom 100px
+
+    @media $media-tablet-vertical
+      margin-bottom 80px
+
+    @media $media-mobile
+      margin-bottom 64px
+
+  &__text
+    margin-top 40px
+    font-size 18px
+    line-height 24px
+    font-weight 500
+    max-height 96px
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp 4
+    overflow hidden
+
+    @media $media-mobile
+      margin-top 24px
+      font-size 16px
+      line-height 20px
+      font-weight 400
+
+    &_full
+      max-height none
+      display block
+
+    &-more
+      cursor pointer
+      margin-bottom 120px
+      margin-top 8px
+      display inline-block
+      color $link
+      font-size 18px
+      line-height 24px
+      font-weight 800
+
+      @media $media-tablet
+        margin-bottom 100px
+
+      @media $media-tablet-vertical
+        margin-bottom 80px
+
+      @media $media-mobile
+        margin-bottom 64px
+        font-size 16px
+        line-height 22px
