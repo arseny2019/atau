@@ -14,7 +14,6 @@
 
 *
   box-sizing border-box
-  user-select none
 
 html, body
   padding 0
@@ -96,6 +95,32 @@ h3
   font-size 32px
   line-height 36px
 
+  @media $media-tablet-vertical
+    font-size 30px
+    line-height 34px
+
+  @media $media-mobile
+    font-size 26px
+    line-height 30px
+
+  @media $media-mobile-lg
+    font-size 24px
+    line-height 28px
+
+h4
+  margin 0
+  font-weight 700
+  font-size 26px
+  line-height 30px
+
+  @media $media-tablet-vertical
+    font-size 24px
+    line-height 28px
+
+  @media $media-mobile
+    font-size 20px
+    line-height 24px
+
 p
   margin 0
 
@@ -135,7 +160,7 @@ p
 
 
 .swiper-pagination
-  bottom -16px !important
+  bottom -20px !important
   display none
 
   @media $media-tablet-vertical
@@ -225,4 +250,7 @@ input[type='submit']
     z-index -1
     width 10vw
     height 10vw
+
+button
+  cursor pointer
 

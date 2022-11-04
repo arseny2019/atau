@@ -1,0 +1,12 @@
+.wpcf7-list-item {
+    margin: 0 !important;
+}
+
+.wpcf7-response-output {
+    display: none;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+    z-index: -1;
+}

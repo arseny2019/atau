@@ -216,6 +216,9 @@
       padding 0 44px
 
   &__item
+    display flex
+    flex-direction column
+
     @media $media-tablet-vertical
       width calc((100vw - 68px) / 2)
 
@@ -253,6 +256,9 @@
     text-align center
     $font(26px, 30px)
     font-weight 700
+
+    @media $media-tablet-vertical
+      margin-top 8px
 
     @media $media-mobile
       $font(20px, 22px)
@@ -292,6 +298,9 @@
   background-color $dark-blue
   padding 48px 0 56px
   color white
+
+  @media $media-tablet-vertical
+    padding 48px 0 80px
 
   @media $media-mobile
     padding 16px 0 80px
@@ -345,15 +354,22 @@
       margin-top 24px
 
 .feedback-slider
-  height 430px
+  height 492px
   max-width 874px
+
+  @media (max-width: 1210px)
+    height calc((100vw - 336px) * 0.5628)
+
+  @media (max-width: 1002px)
+    max-width 100%
+    height calc((100vw - 128px) * 0.5628)
 
   @media $media-tablet-vertical
     max-width 100%
-    height calc((100vw - 128px) / 2)
+    height calc((100vw - 128px) * 0.5628)
 
   @media $media-mobile
-    height calc((100vw - 20px) / 2 - 12px)
+    height calc((100vw - 20px) * 0.5628)
 
   &-text
     margin-top 24px
@@ -361,6 +377,7 @@
     font-weight 400
     font-size 24px
     line-height 32px
+    text-align center
 
     @media $media-mobile
       margin-top 8px
@@ -372,13 +389,19 @@
     position relative
 
   &__slide
-    height 430px
+    height 492px
+
+    @media (max-width: 1210px)
+      height calc((100vw - 336px) * 0.5628)
+
+    @media (max-width: 1002px)
+      height calc((100vw - 128px) * 0.5628)
 
     @media $media-tablet-vertical
-      height calc((100vw - 128px) / 2)
+      height calc((100vw - 128px) * 0.5628)
 
     @media $media-mobile
-      height calc((100vw - 20px) / 2 - 5px)
+      height calc((100vw - 20px) * 0.5628 - 12px)
 
   &__image
     width 100%
@@ -397,13 +420,21 @@
     transition 200ms
 
     @media $media-tablet-vertical
-      top calc(100% + 40px)
+      height 40px
+      width 40px
+      top calc(100% + 68px)
       left calc(50% - 16px)
       transform translateX(-100%) rotate(180deg)
 
       & svg
         height 40px
         width 40px
+
+    @media $media-mobile
+      top calc(100% + 40px)
+
+    @media $media-mobile-md
+      top calc(100% + 58px)
 
     &:hover
       color $dark-blue-hover
@@ -415,7 +446,7 @@
     &_next
       left auto
       right 20px
-      transform none
+      transform translateY(-50%)
       @media $media-tablet-vertical
         right auto
         left calc(50% + 16px)
@@ -547,9 +578,12 @@
       display -webkit-box
       -webkit-line-clamp 4
       -webkit-box-orient vertical
+      max-height 96px
 
       @media $media-mobile
-        -webkit-line-clamp 15
+        -webkit-line-clamp 6
+        max-height 120px
+
 
   &__more
     margin-top 8px

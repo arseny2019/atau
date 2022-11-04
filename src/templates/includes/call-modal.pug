@@ -1,7 +1,7 @@
 .call-modal-overlay
     .call-modal
-        .call-modal__cross
-        .call-modal__header
+        .call-modal__cross.call-modal-close
+        .modal-body
             .call-modal__title Заказать звонок
             .call-modal__subtitle Наш менеджер свяжется с вами
                 br
@@ -23,7 +23,10 @@
                     a(href='/')  Политикой конфиденциальности
                     | .
                 input(type='submit' value='Отправить').form-submit.main-button
-
+        .modal-success
+            .call-modal__title Заявка успешно оформлена
+            .call-modal__subtitle Наш менеджер свяжется с вами в ближайшее время!
+            button.success-modal__button.call-modal-close В каталог
 
 
 

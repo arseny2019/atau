@@ -50,8 +50,17 @@
   &__video
     width 100%
     max-height 473px
-    height 100%
     border-radius 16px
+    height calc((100vw - 140px) * 0.542 * 0.66)
+
+    &_fixed-height
+      height calc((100vw - 120px) * 0.492 * 0.66)
+
+    @media $media-tablet
+      height calc((100vw - 84px) * 0.542 * 0.66)
+
+    @media $media-tablet-vertical
+      height calc((100vw - 68px) * 0.542 * 0.66)
 
     @media $media-mobile
       height calc((100vw - 40px) * 0.492)
@@ -65,8 +74,10 @@
     flex-wrap wrap
     justify-content space-between
     row-gap 16px
+    grid-row span 2
 
     @media $media-mobile
+      min-height none
       width 100%
       max-width none
       display grid
@@ -76,13 +87,16 @@
     &-image
       width calc(50% - 10px)
       height calc((100% - 16px) / 3)
+      border-radius 12px
 
     &-image:nth-child(1)
       width 100%
       height calc((100% - 16px) / 3 * 2)
+      border-radius 16px
 
     &-image, &-image:nth-child(1)
       @media $media-mobile
+        border-radius 12px
         display none
         height calc((100vw - 40px) * 0.726 / 2)
         width 100%
@@ -90,18 +104,29 @@
     &-image:nth-child(1), &-image:nth-child(2)
       @media $media-mobile
         display block
+        object-fit cover
+        object-position center
 
     &-button
       padding 0
       color $link
       text-decoration underline
+      white-space nowrap
       font-weight 800
       font-size 18px
       line-height 24px
+      position relative
+      left 50%
+      top 8px
+      transform translateX(-50%)
 
       @media $media-mobile
         font-size 16px
         line-height 22px
+        position relative
+        left 0
+        top 0
+        transform translateX(0)
 
 
   &__modal-button
@@ -116,6 +141,7 @@
     line-height 32px
 
     @media $media-mobile
+      margin-top 8px
       font-size 16px
       line-height 20px
 

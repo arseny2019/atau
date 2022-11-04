@@ -57,6 +57,7 @@ form
   @media $media-mobile-lg
     display none
 
+
 .accept
   width 20px
   height 20px
@@ -66,6 +67,9 @@ form
   top 2px
   border-radius 6px
   border 2px solid $link
+
+.error + .accept
+  border 2px solid rgba(255, 0, 0, 0.29)
 
 input[type='checkbox']:checked + .accept
   &::before
@@ -100,13 +104,17 @@ input[type='checkbox']:checked + .accept
 
 .question-modal, .call-modal, .order-modal, .success-modal, .slider-modal
   padding 24px 24px 48px
-  position absolute
-  top 50%
-  left 50%
-  transform translate(-50%, -50%)
   width 488px
   background-color white
   border-radius 24px
+  position relative
+  left 50%
+  top 50%
+  transform translate(-50%, -50%)
+
+  @media $media-mobile
+    top 20px
+    transform translate(-50%, 0)
 
   @media $media-mobile-lg
     padding 16px 16px 24px
@@ -125,6 +133,9 @@ input[type='checkbox']:checked + .accept
     visibility hidden
     opacity 0
     overflow auto
+
+    @media $media-mobile
+      padding-bottom 70px
 
   &__cross
     width 16px
@@ -196,6 +207,7 @@ input[type='checkbox']:checked + .accept
     position relative
     left 50%
     transform translateX(-50%)
+    cursor pointer
 
     @media $media-mobile
       padding 12px 32px
@@ -257,6 +269,13 @@ input[type='checkbox']:checked + .accept
 
   &-arrow
     cursor pointer
+    width 60px
+    height 60px
+
+    @media $media-mobile
+      width 40px
+      height 40px
+
     & svg
       @media $media-mobile
         width 40px
@@ -269,3 +288,8 @@ input[type='checkbox']:checked + .accept
       color $gray-arrow !important
       cursor not-allowed
 
+.modal-success
+  padding 46px 0 22px
+
+  @media $media-mobile
+    padding 24px 0 16px

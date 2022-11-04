@@ -1,7 +1,7 @@
 .order-modal-overlay
     .order-modal
-        .order-modal__cross
-        .order-modal__header
+        .order-modal__cross.order-modal-close
+        .modal-body
             .order-modal__title Задать вопрос
             .order-modal__subtitle Мы незамедлительно ответим на все интересующие вас вопросы!
             form
@@ -23,6 +23,10 @@
                     a(href='/') Политикой конфиденциальности
                     | .
                 input(type='submit' value='Отправить').form-submit.main-button
+        .modal-success
+            .order-modal__title Заявка успешно оформлена
+            .order-modal__subtitle Наш менеджер свяжется с вами в ближайшее время!
+            button.success-modal__button.order-modal-close В каталог
 
 
 

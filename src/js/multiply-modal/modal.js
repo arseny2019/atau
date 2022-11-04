@@ -8,9 +8,12 @@ export class Modal {
     }
 
     init() {
-        this.modal.addEventListener('click', e => {
-            e.stopPropagation();
-        });
+        document.addEventListener('successModalSubmit', () => this.close());
+        if (this.modal) {
+            this.modal.addEventListener('click', e => {
+                e.stopPropagation();
+            });
+        }
 
         if (this.openModalButton.length > 1) {
             this.openModalButton.forEach(button => {
@@ -42,21 +45,21 @@ export class Modal {
             }
         }
 
-        this.modalOverlay.addEventListener('click', e => {
-            e.stopPropagation();
-            this.close();
-        });
+        if (this.modalOverlay) {
+            this.modalOverlay.addEventListener('click', e => {
+                e.stopPropagation();
+                // this.close();
+            });
+        }
     }
 
     open() {
-        console.log('open')
         if (this.options.openCallback) {
             this.options.openCallback(this.modalOverlay, this.modal);
         }
     }
 
     close() {
-        console.log('close')
         if (this.options.closeCallback) {
             this.options.closeCallback(this.modalOverlay, this.modal);
         }
