@@ -88,15 +88,22 @@ $term_link = get_term_link($term, 'equipment_type');
                         <?php }
                     } ?>
                     <?php if (!empty($slides)) { ?>
-                        <button class="category-detail__gallery-button mobile-hidden js-open-modal-slider">Посмотреть фото
-                        </button>
+                        <div class="flex-basis">
+                            <button class="category-detail__gallery-button mobile-hidden js-open-modal-slider">
+                                Посмотреть
+                                фото
+                            </button>
+                        </div>
                     <?php } ?>
                 </div>
                 <?php
                 if (!empty($slides)) {
                     ?>
-                    <button class="category-detail__gallery-button mobile-only js-open-modal-slider">Посмотреть все фото
-                    </button>
+                    <div class="flex-basis">
+                        <button class="category-detail__gallery-button mobile-only js-open-modal-slider">Посмотреть все
+                            фото
+                        </button>
+                    </div>
                 <?php } ?>
                 <div class="category-detail__text">
                     <?php echo wpautop($post->post_content); ?>

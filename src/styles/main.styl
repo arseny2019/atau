@@ -69,6 +69,21 @@ input[type="text"]
   @media $media-mobile
     padding 0 20px
 
+h1
+  user-select none
+  margin 0
+  font-weight 800
+  font-size 64px
+  line-height 72px
+
+  @media $media-tablet-vertical
+    font-size 48px
+    line-height 54px
+
+  @media $media-mobile
+    font-size 36px
+    line-height 38px
+
 h2
   user-select none
   margin 0
@@ -254,3 +269,8 @@ input[type='submit']
 button
   cursor pointer
 
+.sidebar-show
+  overflow hidden !important
+
+.flex-basis
+  flex-basis 100%

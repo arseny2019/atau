@@ -6,7 +6,7 @@ global $post;
 ?>
     <section class="category">
         <div class="container">
-            <h2>Политика конфиденциальности</h2>
+            <h2><?php echo get_the_title(); ?></h2>
             <?php echo wpautop($post->post_content); ?>
         </div>
     </section>

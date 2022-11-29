@@ -19,6 +19,12 @@
 
   &__title
     margin-top 40px
+    font-size 64px
+    line-height 72px
+
+    @media $media-tablet-vertical
+      font-size 48px
+      line-height 54px
 
     @media $media-mobile
       margin-top 24px
@@ -90,6 +96,10 @@
     height calc((100vw - 120px) * 0.59)
 
     @media $media-tablet
+      width calc(100vw - 64px - (100vw - 1320px))
+      height calc(100vw - 64px - (100vw - 1320px) * 0.59)
+
+    @media (max-width: 1320px)
       width calc(100vw - 64px)
       height calc((100vw - 64px) * 0.59)
 
@@ -104,9 +114,12 @@
 
   &__features
     position relative
-    left 60px
+    left calc((100vw - 1320px) / 2)
 
     @media $media-tablet
+      left calc((100vw - 1320px) / 2 + 32px)
+
+    @media (max-width: 1320px)
       left 32px
 
     @media $media-tablet-vertical

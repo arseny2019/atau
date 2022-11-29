@@ -9,6 +9,7 @@
  * @package atau
  */
 
+do_action('redirect_action');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -16,7 +17,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-
     <?php wp_head(); ?>
 </head>
 
@@ -67,6 +67,9 @@
     <div class="sidebar__content">
         <div class="sidebar__menu">
             <?php output_mobile_menu(); ?>
+            <button class="header__modal-button header__modal-button_sidebar js-question-form-button blue-text-hover">
+                Задать вопрос?
+            </button>
         </div>
         <div class="sidebar__contacts">
             <div class="sidebar__socials"><a class="blue-text-hover" href="<?php output_inst(); ?>" target="_blank">
@@ -88,8 +91,8 @@
                 <span><?php output_phone_number('carbon_phone', false); ?></span></a></div>
     </div>
 </div>
-<div class="question-modal-overlay">
-    <div class="question-modal">
+<div class="question-modal-overlay<?php if (is_user_logged_in()) echo ' question-modal-overlay_admin' ?>">
+    <div class="question-modal<?php if (is_user_logged_in()) echo ' question-modal_admin' ?>">
         <div class="question-modal__cross question-modal-close"></div>
         <div class="modal-body">
             <div class="question-modal__title"><?php echo carbon_get_theme_option('form1-title'); ?></div>

@@ -36,6 +36,8 @@ require get_template_directory() . '/inc/theme-setup.php';
 require get_template_directory() . '/inc/enqueue-scripts.php';
 require get_template_directory() . '/inc/navigation.php';
 require get_template_directory() . '/inc/data-functions.php';
+require get_template_directory() . '/inc/meta-tags.php';
+require get_template_directory() . '/inc/redirect-functions.php';
 require get_template_directory() . '/inc/ajax.php';
 
 /**

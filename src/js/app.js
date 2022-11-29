@@ -200,12 +200,12 @@ export class App {
         const sidebar = document.querySelector('.sidebar');
         document.querySelector('.sidebar__cross').addEventListener('click', () => {
             sidebar.classList.add('sidebar_hidden');
+            document.body.classList.remove('sidebar-show');
             $body.nullifyPadding();
-            $body.showOverflow();
         });
         document.querySelector('.header__burger').addEventListener('click', () => {
             sidebar.classList.remove('sidebar_hidden');
-            $body.hideOverflow();
+            document.body.classList.add('sidebar-show');
             setBodyPadding();
         });
 

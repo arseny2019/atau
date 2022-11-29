@@ -15,6 +15,19 @@ export class Modal {
             });
         }
 
+        if (this.modal) {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    this.close();
+                }
+            });
+        }
+        if (this.modal) {
+            this.modal.addEventListener('click', e => {
+                e.stopPropagation();
+            });
+        }
+
         if (this.openModalButton.length > 1) {
             this.openModalButton.forEach(button => {
                 button.addEventListener('click', () => {

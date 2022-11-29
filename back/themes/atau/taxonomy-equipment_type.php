@@ -11,7 +11,7 @@ $query = new WP_Query(array(
 $text = carbon_get_term_meta($term->term_id, 'text');
 ?>
     <section class="category">
-        <div class="container"><h2 class="category__title"><?php echo $term->name; ?></h2>
+        <div class="container"><h1 class="category__title"><?php echo $term->name; ?></h1>
             <?php
             if (!empty($query->posts)) {
                 ?>

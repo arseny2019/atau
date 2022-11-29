@@ -13,7 +13,7 @@ $query = new WP_Query(
 ?>
 
     <section class="projects">
-        <div class="container"><h2 class="projects__title">Наши работы</h2>
+        <div class="container"><h1 class="projects__title">Наши работы</h1>
             <?php
             if (!empty($query->posts)) {
                 ?>

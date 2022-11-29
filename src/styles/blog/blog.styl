@@ -2,15 +2,18 @@
 @import "blog-detail.styl"
 
 .blog
+  padding-top 40px
   padding-bottom 120px
 
   @media $media-tablet
     padding-bottom 100px
+    padding-top 8px
 
   @media $media-tablet-vertical
     padding-bottom 80px
 
   @media $media-mobile
+    padding-top 24px
     padding-bottom 64px
 
   &__top
@@ -121,6 +124,12 @@
       grid-column-gap 20px
 
     & .blog__item
+
+      &-text
+
+        @media (min-width: 1440px)
+          text-align center
+
       @media $media-desktop
         display flex
         flex-direction column

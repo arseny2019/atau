@@ -12,7 +12,7 @@ $query = new WP_Query(
 ?>
     <section class="blog">
         <div class="container">
-            <h2 class="blog__title">Новости</h2>
+            <h1 class="blog__title">Новости</h1>
             <?php if (!empty($query->posts)) { ?>
                 <div class="blog__top">
                     <div class="blog__main">
