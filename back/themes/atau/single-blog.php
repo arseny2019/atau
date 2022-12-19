@@ -16,8 +16,14 @@ $thumbnail_url = get_the_post_thumbnail_url($post->ID, 'full');
             <img class="blog-detail__image" src="<?php echo $thumbnail_url; ?>"/>
             <div class="blog-detail__gallery-mobile">
                 <?php $slides = carbon_get_post_meta($post->ID, 'slider');
-                for ($i = 0; $i < 2; $i++) {
-                    $image_url = wp_get_attachment_image_url($slides[$i], 'full');
+                if (!empty($slides && !empty($slides[0]))) {
+                    $image_url = wp_get_attachment_image_url($slides[0], 'full');
+                    ?>
+                    <img src="<?php echo $image_url; ?>"/>
+                    <?php
+                }
+                if (!empty($slides && !empty($slides[1]))) {
+                    $image_url = wp_get_attachment_image_url($slides[1], 'full');
                     ?>
                     <img src="<?php echo $image_url; ?>"/>
                     <?php

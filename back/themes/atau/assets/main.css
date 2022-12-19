@@ -4435,6 +4435,10 @@ input[type='checkbox']:checked + .accept::after {
 }
 * {
   box-sizing: border-box;
+  user-select: none;
+}
+input {
+  user-select: all;
 }
 html,
 body {
