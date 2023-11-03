@@ -1,0 +1,217 @@
+@import "vars.styl"
+
+.banner
+  position relative
+
+  &-section
+    padding-top: 56px
+    padding-bottom: 76px
+
+    @media $media-mobile
+      padding-top: 48px
+      padding-bottom: 48px
+
+  @media $media-tablet
+    margin-top: 48px
+
+  @media $media-mobile
+    display none
+
+  &__image
+    width 100%
+    height 100%
+    object-fit contain
+
+    @media $media-mobile
+      height 245px
+
+  &__navigation
+    position absolute
+    bottom 0
+    width 100%
+    display flex
+    justify-content center
+
+    & div
+      cursor pointer
+      color #F66B0E
+
+      &.arrow-disabled
+        color #878787
+        cursor not-allowed
+
+  &__container
+    width 100%
+    height 596px
+
+    @media $media-tablet
+      height 500px
+
+  &__slide
+    display grid
+    grid-template-columns: 1fr min(47.5vw, 684px);
+    grid-gap 40px
+    position absolute
+    top 0
+    left 0
+    padding-bottom: 40px
+    z-index -1
+
+
+    &-inverted
+      grid-template-columns min(47.5vw, 684px) 1fr
+
+      & .banner__slide-right
+        transform translateX(-120px)
+
+    &-left
+      padding-top: 24px
+      opacity 0
+      transform translateY(60px)
+      transition 500ms
+      visibility hidden
+
+    &-right
+      height 100%
+      opacity 0
+      transform translateX(120px)
+      transition 500ms
+      visibility hidden
+
+    &_active
+      z-index 0
+      & .banner__slide-left
+        opacity 1
+        transform translateY(0)
+        visibility visible
+
+      & .banner__slide-right
+        opacity 1
+        transform translateX(0)
+        visibility visible
+
+    &-title
+      font-size: 96px;
+      font-weight: 600;
+      line-height: 78px; /* 81.25% */
+      letter-spacing: -2.88px;
+
+      @media $media-tablet
+        font-size: 48px;
+        line-height: 44px; /* 91.667% */
+        letter-spacing: -1.44px;
+
+      @media $media-mobile
+        text-align: center;
+
+    &-description
+      margin-top: 16px
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 28px; /* 127.273% */
+      letter-spacing: -0.22px;
+      max-width 444px
+
+      @media $media-tablet
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px; /* 111.111% */
+        letter-spacing: -0.18px;
+
+      @media $media-mobile
+        margin-top: 8px
+        text-align: center;
+
+    &-button
+      margin-top: 24px
+
+      @media $media-mobile
+        display none
+
+    &-button-mobile
+      display none
+      margin-top: 40px
+
+      @media $media-mobile
+        display inline-block
+
+    &-features
+      display inline-grid
+      grid-template-columns auto auto
+      grid-gap 32px
+      margin-top: 88px
+
+      @media $media-tablet
+        margin-top: 32px
+
+      @media $media-mobile
+        margin-top: 16px
+        grid-gap 12px
+
+      & div
+        display grid
+        grid-template-columns auto 1fr
+        grid-gap 8px
+
+        & span:nth-child(1)
+          width: 40px
+          height: 40px
+          display inline-block
+          background-size: contain;
+          background-image: url('../img/check-orange.svg')
+
+          @media $media-mobile
+            width 24px
+            height 24px
+
+        & span:nth-child(2)
+          max-width 162px
+          display inline-block
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 20px; /* 111.111% */
+          letter-spacing: -0.36px;
+
+          @media $media-mobile
+            max-width 132px
+            font-size: 14px;
+            line-height: 14px;
+
+
+.banner-mobile
+  display none
+
+  @media $media-mobile
+    display block
+
+  & .swiper
+    height auto
+
+  &__slide
+    padding-bottom: 40px
+    display flex
+    flex-direction column
+    align-items center
+
+  &__pagination
+    position absolute
+    left 0
+    bottom 0
+    width 100%
+    display flex
+    justify-content center
+    z-index 10
+
+    &-bullet
+      width 8px
+      height 8px
+      border-radius 50%
+      background-color: #D9D9D9
+      cursor pointer
+
+      & + &
+        margin-left: 12px
+
+      &-active
+        background-color: #112B3C
+        cursor default

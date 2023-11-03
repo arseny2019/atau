@@ -1,0 +1,18 @@
+.new-modal-overlay.js-new-feedback-modal-overlay
+.new-modal.new-modal_feedback.js-new-feedback-modal
+    .new-modal__cross.js-feedback-close
+    h4.new-modal__title Обратная связь
+    .new-modal__form
+        input(type='text' placeholder='Имя').new-modal__input.orange-input
+        input(type='text' placeholder='Почта').new-modal__input.orange-input
+        textarea(placeholder='Почта').orange-input.orange-input-textarea
+        label.new-modal__privacy
+            input(type='checkbox').hidden
+            span.accept
+            p.new-modal__privacy-text
+                | Я принимаю условия
+                a(href='/').new-modal__privacy-text_blue  Пользовательского соглашения
+                |  и&nbsp;даю своё согласие на обработку моей персональной информации на условиях, определенных
+                a(href='/').new-modal__privacy-text_blue  Политикой конфиденциальности.
+    button.orange-button.new-modal__submit.js-feedback-close Отправить
+    button.new-modal__back.new-modal__back_margin.js-feedback-close Назад

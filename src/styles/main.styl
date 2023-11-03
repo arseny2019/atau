@@ -11,6 +11,15 @@
 @import "projects/projects.styl"
 @import "blog/blog.styl"
 @import "contacts.styl"
+@import "banner.styl"
+@import "new-main.styl"
+@import "new-footer.styl"
+@import "new-header.styl"
+@import "new-sidebar.styl"
+@import "new-modal.styl"
+
+.fira-sans
+  font-family: 'Fira Sans', sans-serif;
 
 *
   box-sizing border-box
@@ -211,6 +220,15 @@ p
   @media $media-mobile
     display none
 
+.tablet-vertical-hidden
+  @media $media-tablet-vertical
+    display none
+
+.tablet-vertical-only
+  display none
+  @media $media-tablet-vertical
+    display inline-block
+
 .mobile-only
   display none
   @media $media-mobile
@@ -278,3 +296,39 @@ button
 
 .flex-basis
   flex-basis 100%
+
+.orange-button
+  padding: 20px 40px
+  font-family: Fira Sans;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px; /* 111.111% */
+  letter-spacing: 0.18px;
+  border-radius 24px
+  color white
+  background: $orange;
+
+a.orange-button
+  display inline-block
+
+.orange-input
+  padding: 24px
+  border-radius: 24px;
+  border: 1px solid $orange;
+  background: #FFF;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px; /* 111.111% */
+  letter-spacing: -0.18px;
+  width 100%
+
+  &-textarea
+    height 240px
+    font-family "Fira Sans" !important
+    resize none
+
+    @media $media-mobile
+      height 180px
+
+  &:placeholder
+    color #878787

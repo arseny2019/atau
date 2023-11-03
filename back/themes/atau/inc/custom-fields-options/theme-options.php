@@ -10,56 +10,87 @@ $default_page_container = Container::make('theme_options', 'Настройки �
     ->set_icon('dashicons-admin-generic')
     ->set_page_menu_position(25)
     ->add_tab('Главная', array(
-        Field::make('media_gallery', 'main_slider', __('Слайдер'))->set_type('image'),
-        Field::make('text', 'main-block1-title', __('Заголовок для 1го информационного блока'))
-            ->set_width(50),
-        Field::make('textarea', 'main-block1-text', __('Текст для 1го информационного блока'))
-            ->set_width(50),
-        Field::make('complex', 'main-block-1-features', 'Особенности для 1го информационного блока')
+
+        Field::make('complex', 'banner', 'Баннер')
             ->add_fields(array(
-                Field::make('text', 'title', 'Название')->set_width(75),
-                Field::make('image', 'image', 'Иконка')->set_width(25),
-                Field::make('text', 'text', 'Текст')
+                Field::make('text', 'title', 'Заголовок')->set_width(25),
+                Field::make('image', 'image', 'Изображение')->set_width(25),
+                Field::make('text', 'text', 'Текст')->set_width(50),
+                Field::make('text', 'link', 'Ссылка куда ведет "Подробнее"')->set_width(25),
+                Field::make( 'checkbox', 'inverse', __( 'Инвертировать слайд' ) )->set_width(25),
+                Field::make('complex', 'features', 'Особенности')
+                    ->add_fields(array(
+                            Field::make('text', 'title', 'Название особенности')
+                        )
+                    )
             )),
-        Field::make('text', 'main-block2-title', __('Заголовок для 2го информационного блока (Категории)'))->set_width(50),
-        Field::make('text', 'main-block2-subtitle', __('Подзаголовок для 2го информационного блока (Категории)'))
+        Field::make('separator', 'crb_separator5', __('О нас')),
+        Field::make( 'checkbox', 'about-show', __( 'Показывать блок' ) )
+            ->set_option_value( 'true' )
             ->set_width(50),
-        Field::make('text', 'main-block3-title', __('Заголовок для 3го информационного блока (Отзывы)')),
-        Field::make('text', 'main-block4-title', __('Заголовок для 4го информационного блока (Наши работы)'))->set_width(50),
-        Field::make('text', 'main-block4-subtitle', __('Подзаголовок для 4го информационного блока (Наши работы)'))->set_width(50),
-        Field::make('text', 'main-block5-title', __('Заголовок для 5го информационного блока (Партнеры)')),
-        Field::make('rich_text', 'main-block6-text', __('Текст для 6го информационного блока (текст после блока Партнеры)')),
+        Field::make('image', 'about-image', 'Изображение')->set_width(50),
+        Field::make('text', 'about-title', 'Заголовок')->set_width(25),
+        Field::make('text', 'about-link', 'Ссылка куда ведет "Подробнее"')->set_width(25),
+        Field::make('textarea', 'about-text', 'Текст')->set_width(50),
+
+        Field::make('separator', 'crb_separator6', __('Наши работы')),
+        Field::make('text', 'projects-title', 'Заголовок')->set_width(25),
+        Field::make( 'media_gallery', 'projects-images', __( 'Картинки работ' ) )
+            ->set_type( array( 'image' ) ),
+        Field::make('text', 'projects-link', 'Ссылка куда ведет "Показать еще"')->set_width(25),
+
+        Field::make('separator', 'crb_separator7', __('Почему выбирают нас?')),
+        Field::make('text', 'why-we-title', 'Заголовок'),
+        Field::make('text', 'why-we-feature-1-title', 'Заголовок 1 особенности'),
+        Field::make('text', 'why-we-feature-1-text', 'Текст 1 особенности'),
+        Field::make('text', 'why-we-feature-2-title', 'Заголовок 2 особенности'),
+        Field::make('text', 'why-we-feature-2-text', 'Текст 2 особенности'),
+        Field::make('text', 'why-we-feature-3-title', 'Заголовок 3 особенности'),
+        Field::make('text', 'why-we-feature-3-text', 'Текст 3 особенности'),
+
+        Field::make( 'media_gallery', 'why-we-images', __( 'Картинки партнеров' ) )
+            ->set_type( array( 'image' ) ),
     ))
     ->add_tab('Формы обратной связи', array(
-        Field::make('separator', 'crb_separator1', __('Форма 1 (Задать Вопрос)')),
+        Field::make('separator', 'crb_separator1', __('Форма 1 (Оставить заявку на главной)')),
         Field::make('text', 'form1-title', __('Заголовок формы 1'))->set_width(50),
         Field::make('text', 'form1-subtitle', __('Подзаголовок формы 1'))->set_width(50),
         Field::make('text', 'form1-title-success', __('Заголовок успешной отправки формы 1'))->set_width(50),
         Field::make('text', 'form1-subtitle-success', __('Подзаголовок успешной отправки формы 1'))->set_width(50),
-        Field::make('text', 'form1-call', __('Текст кнопки показа формы 1'))->set_width(50),
-        Field::make('text', 'form1-success', __('Текст кнопки успешной отправки'))->set_width(50),
-        Field::make('separator', 'crb_separator2', __('Форма 2 (Заказать звонок)')),
+        Field::make('text', 'form1-title-fail', __('Заголовок неудачной отправки формы 1'))->set_width(50),
+        Field::make('text', 'form1-subtitle-fail', __('Подзаголовок неудачной отправки формы 1'))->set_width(50),
+        Field::make('image', 'form1-image', __('Изображение рядом с формой'))->set_width(50),
+        Field::make('separator', 'crb_separator2', __('Форма 2 (Обратная связь в шапке)')),
         Field::make('text', 'form2-title', __('Заголовок формы 2'))->set_width(50),
-        Field::make('text', 'form2-subtitle', __('Подзаголовок формы 2'))->set_width(50),
         Field::make('text', 'form2-title-success', __('Заголовок успешной отправки формы 2'))->set_width(50),
         Field::make('text', 'form2-subtitle-success', __('Подзаголовок успешной отправки формы 2'))->set_width(50),
+        Field::make('text', 'form2-title-fail', __('Заголовок неудачной отправки формы 2'))->set_width(50),
+        Field::make('text', 'form2-subtitle-fail', __('Подзаголовок неудачной отправки формы 2'))->set_width(50),
         Field::make('text', 'form2-call', __('Текст кнопки показа формы 2'))->set_width(50),
-        Field::make('text', 'form2-success', __('Текст кнопки успешной отправки'))->set_width(50),
         Field::make('separator', 'crb_separator3', __('Форма 3 (Подробнее на детальной странице)')),
         Field::make('text', 'form3-title', __('Заголовок формы 3'))->set_width(50),
         Field::make('text', 'form3-subtitle', __('Подзаголовок формы 3'))->set_width(50),
         Field::make('text', 'form3-title-success', __('Заголовок успешной отправки формы 3'))->set_width(50),
         Field::make('text', 'form3-subtitle-success', __('Подзаголовок успешной отправки формы 3'))->set_width(50),
         Field::make('text', 'form3-call', __('Текст кнопки показа формы 3'))->set_width(50),
-        Field::make('text', 'form3-success', __('Текст кнопки успешной отправки'))->set_width(50)
+        Field::make('text', 'form3-success', __('Текст кнопки успешной отправки'))->set_width(50),
+        Field::make('separator', 'crb_separator4', __('Форма 4 (Звонок в футере)')),
+        Field::make('text', 'form4-title', __('Заголовок формы 4'))->set_width(50),
+        Field::make('text', 'form4-subtitle', __('Подзаголовок формы 4'))->set_width(50),
+        Field::make('text', 'form4-title-success', __('Заголовок успешной отправки формы 4'))->set_width(50),
+        Field::make('text', 'form4-subtitle-success', __('Подзаголовок успешной отправки формы 4'))->set_width(50),
+        Field::make('text', 'form4-title-fail', __('Заголовок неудачной отправки формы 4'))->set_width(50),
+        Field::make('text', 'form4-subtitle-fail', __('Подзаголовок неудачной отправки формы 4'))->set_width(50),
+        Field::make('rich_text', 'form-footer-text', __('Текст в футере модалки результата отправки'))->set_width(50),
     ))
     ->add_tab('Контакты', array(
         Field::make('text', 'carbon_address', __('Адрес'))->set_width(50),
         Field::make('textarea', 'carbon_map', __('html код карты. Не трогайте это поле если не хотите заменить стандартную карту.'))
             ->help_text('Поместите в это поле код карты, созданной на <a target="_blank" href="https://yandex.ru/map-constructor/">https://yandex.ru/map-constructor/</a>')->set_width(50),
-        Field::make('text', 'carbon_phone', __('Контактный номер телефона'))->set_width(33),
-        Field::make('text', 'carbon_inst', __('Ссылка на телеграм'))->set_width(33),
-        Field::make('text', 'carbon_vk', __('Ссылка на vk'))->set_width(33),
+        Field::make('text', 'carbon_phone', __('Контактный номер телефона'))->set_width(25),
+        Field::make('text', 'carbon_inst', __('Ссылка на телеграм'))->set_width(25),
+        Field::make('text', 'carbon_vk', __('Ссылка на vk'))->set_width(25),
+        Field::make('text', 'carbon_rutube', __('Ссылка на RuTube'))->set_width(25),
         Field::make('complex', 'contacts_features', __('Особенности'))
             ->add_fields(array(
                 Field::make('text', 'text', __('Текст')),

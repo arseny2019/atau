@@ -10,3 +10,51 @@
     visibility: hidden;
     z-index: -1;
 }
+
+.banner__slide {
+    display: grid;
+    grid-template-columns: 1fr min(47.5vw, 684px);
+    grid-gap: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-bottom: 40px;
+    z-index: -1;
+}
+.banner__slide-inverted {
+    grid-template-columns: min(47.5vw, 684px) 1fr;
+}
+
+@media (min-width: 1024px) {
+    .banner__slide-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.wpcf7-not-valid-tip {
+    position: absolute;
+    top: 42px;
+    left: 26px;
+    white-space: nowrap;
+}
+
+.wpcf7-form-control-wrap {
+    display: block;
+}
+
+.orange-input.error, .new-footer__form-input.error {
+    border: 1px solid #FA382C;
+    background-color: rgba(250, 56, 44, 0.03);
+}
+
+.error + .accept {
+    border: 2px solid #FA382C;
+    background-color: rgba(250, 56, 44, 0.03);
+}
+
+.success-title-fail {
+    color: #FA382C;
+}

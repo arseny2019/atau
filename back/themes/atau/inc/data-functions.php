@@ -46,6 +46,11 @@ function output_vk()
     echo carbon_get_theme_option('carbon_vk');
 }
 
+function output_rutube()
+{
+    echo carbon_get_theme_option('carbon_rutube');
+}
+
 //Адрес
 function output_address()
 {

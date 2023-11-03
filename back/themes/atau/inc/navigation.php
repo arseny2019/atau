@@ -25,7 +25,7 @@ function filter_custom_menu_items($items, $args)
 }
 
 //Добавляем классы ссылкам
-add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4);
+//add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4);
 
 function filter_nav_menu_link_attributes($atts, $item, $args, $depth)
 {
@@ -92,7 +92,7 @@ function output_header_main_menu()
         'after' => '',
         'link_before' => '',
         'link_after' => '',
-        'items_wrap' => '<nav class="header__menu">%3$s</nav>',
+        'items_wrap' => '%3$s',
         'depth' => 0,
         'walker' => '',
     );

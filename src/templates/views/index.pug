@@ -1,14 +1,82 @@
 html(lang='ru')
     include ../includes/head
-    body
-        include ../includes/header
-        include ../includes/sidebar
-        include ../includes/main-page/main-slider
-        include ../includes/main-page/info-section
-        include ../includes/main-page/category-section
-        include ../includes/main-page/feedback-section
-        include ../includes/main-page/projects-section
-        include ../includes/partners
-        include ../includes/main-page/text-section
-        include ../includes/footer
+    body.fira-sans
+        include ../includes/new-header
+        include ../includes/new-sidebar
+        include ../includes/banner
+        section.new-about
+            .new-container
+                h2.new-about__title О нас
+                .new-about__grid
+                    .new-about__left
+                        p.new-about__text
+                            | Atau – это российский производитель современного оборудования.
+                            |Мы имеем обширный опыт в реализации сложных проектов. Atau – это российский производитель
+                            | современного оборудования. Мы имеем обширный опыт в реализации сложных проектов
+                        button.orange-button.new-about__button Подробнее
+                        button.new-about__button-mobile Подробнее
+                    .new-about__image-container
+                        img(src='../../img/new-about.png').new-about__image
+        section.new-our-projects
+            .new-container
+                h2.new-our-projects__title Наши работы
+                .new-our-projects__grid
+                    .new-our-projects__item-container
+                        img(src='../../img/new-main/project-1.png').new-our-projects__item
+                    .new-our-projects__item-container
+                        img(src='../../img/new-main/project-2.png').new-our-projects__item
+                    .new-our-projects__item-container
+                        img(src='../../img/new-main/project-3.png').new-our-projects__item
+                    .new-our-projects__item-container
+                        img(src='../../img/new-main/project-4.png').new-our-projects__item
+                button.orange-button.new-our-projects__button Показать еще
+        section.why-we
+            .new-container
+                h2.why-we__title Почему выбирают нас?
+                .why-we__features
+                    .why-we__feature
+                        img(src='../../img/new-main/like.svg')
+                        .why-we__feature-title Обширный опыт
+                        .why-we__feature-text В реализации сложных проектов национального масштаба
+                    .why-we__feature
+                        img(src='../../img/new-main/idea.svg')
+                        .why-we__feature-title Качество знаний
+                        .why-we__feature-text В команде работают только лучшие специалисты
+                    .why-we__feature
+                        img(src='../../img/new-main/approach.svg')
+                        .why-we__feature-title Гибкий подход
+                        .why-we__feature-text Учитываем индивидуальные требования клиентов
+                button.orange-button.why-we__button.js-set-state-request Оставить заявку
+                .why-we__partners
+                    .swiper.js-new-partners-slider
+                        .swiper-wrapper
+                            .swiper-slide
+                                img(src='../../img/new-main/partner-1.png')
+                            .swiper-slide
+                                img(src='../../img/new-main/partner-2.png')
+                            .swiper-slide
+                                img(src='../../img/new-main/partner-3.png')
+                            .swiper-slide
+                                img(src='../../img/new-main/partner-4.png')
+                            .swiper-slide
+                                img(src='../../img/new-main/partner-5.png')
+                            .swiper-slide
+                                img(src='../../img/new-main/partner-1.png')
+        section.new-contact-us
+            .new-container
+                .new-contact-us__grid
+                    .new-contact-us__left
+                        h2.new-contact-us__title
+                            | Оставить заявку
+                        p.new-contact-us__text
+                            | Наши операторы свяжутся с Вами в течение пяти минут и проконсультируют Вас по всем интересующим вопросам
+                        .new-contact-us__form
+                            form
+                                input(type='text' placeholder='Имя').orange-input
+                                input(type='text' placeholder='Телефон').orange-input.new-contact-us__form-second-input
+                                button(type='button' value='Отправить').orange-button.new-contact-us__form-submit.js-set-state-request Отправить
+
+                    .new-contact-us__image
+                        img(src='../../img/new-main/contact-us.png')
+        include ../includes/new-footer
 

@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-add_action('wp_head', 'add_metrics');
+//add_action('wp_head', 'add_metrics');
 
 function add_metrics()
 {

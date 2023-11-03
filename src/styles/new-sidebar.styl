@@ -1,0 +1,101 @@
+@import "vars.styl"
+
+.new-sidebar
+  width: 100vw
+  height 100vh
+  padding-bottom: 56px
+  font-family 'Fira Sans'
+  position fixed
+  z-index 998
+  top 0
+  left 0
+  background-color: #fff
+  transition 500ms
+
+  &_hidden
+    transform translateX(100%)
+
+  &__top
+    padding-top: 10px
+    padding-bottom: 40px
+    display flex
+    justify-content center
+    position relative
+
+  &__logo
+    width: 126px
+    height: 21px
+
+  &__cross
+    width 24px
+    height 24px
+    top: 8px
+    right: 0
+    display block
+    position absolute
+    cursor pointer
+
+    &::before, &::after
+      content ''
+      position absolute
+      width 18px
+      height 2px
+      top 11px
+      left 50%
+      border-radius 1px
+      transform translateX(-50%) rotate(45deg)
+      background-color $gray-sidebar
+
+    &::after
+      transform translateX(-50%) rotate(-45deg)
+
+  &__container
+    height calc(100vh - 127px)
+    display flex
+    flex-direction column
+    justify-content space-between
+    overflow-y auto
+
+  &__menu
+    display grid
+    grid-template-columns 1fr
+    grid-gap 32px
+
+    & a
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 22px; /* 100% */
+
+  &__feedback
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px; /* 100% */
+    color $orange
+    cursor pointer
+
+  &__bottom
+    display grid
+    grid-gap 24px
+    grid-template-columns 1fr
+
+    & img
+      width: 32px
+      height: 32px
+
+  &__link
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 122.222% */
+    letter-spacing: -0.36px;
+    display flex
+    align-items center
+
+    & img
+      margin-right: 8px
+
+  &__socials
+    display flex
+
+    & a + a
+      margin-left: 32px

@@ -5,6 +5,8 @@ import {$body, setBodyPadding} from "./helpers";
 import {ModalWithSuccess} from "./multiply-modal/modalWithSuccess";
 import {Fetcher} from "./fetcher";
 import {Sliders} from "./sliders";
+import {Banner} from "./banner";
+import {MutableModal} from "./mutable-modal";
 
 Swiper.use([Navigation, Pagination]);
 
@@ -13,9 +15,11 @@ export class App {
         this.initSliders();
         this.createInstances();
         this.initListeners();
+        this.initNewDesignItems();
     }
 
     createInstances() {
+        const mutableModal = new MutableModal();
         const fetcher = new Fetcher();
         const questionModal = new ModalWithSuccess({
             openModalButtonSelector: '.js-question-form-button',
@@ -197,18 +201,57 @@ export class App {
         }
 
         // Мобильное меню
-        const sidebar = document.querySelector('.sidebar');
-        document.querySelector('.sidebar__cross').addEventListener('click', () => {
-            sidebar.classList.add('sidebar_hidden');
+        const sidebar = document.querySelector('.new-sidebar');
+        document.querySelector('.new-sidebar__cross').addEventListener('click', () => {
+            sidebar.classList.add('new-sidebar_hidden');
             document.body.classList.remove('sidebar-show');
             $body.nullifyPadding();
         });
-        document.querySelector('.header__burger').addEventListener('click', () => {
-            sidebar.classList.remove('sidebar_hidden');
+        document.querySelector('.new-header__burger').addEventListener('click', () => {
+            sidebar.classList.remove('new-sidebar_hidden');
             document.body.classList.add('sidebar-show');
             setBodyPadding();
         });
+        // Старая версия
+        // const sidebar = document.querySelector('.sidebar');
+        // document.querySelector('.sidebar__cross').addEventListener('click', () => {
+        //     sidebar.classList.add('sidebar_hidden');
+        //     document.body.classList.remove('sidebar-show');
+        //     $body.nullifyPadding();
+        // });
+        // document.querySelector('.header__burger').addEventListener('click', () => {
+        //     sidebar.classList.remove('sidebar_hidden');
+        //     document.body.classList.add('sidebar-show');
+        //     setBodyPadding();
+        // });
 
         maskPhone('.phone-mask')
+    }
+
+    initNewDesignItems() {
+        const banner = new Banner();
+        const partnersSlider = new Swiper('.js-new-partners-slider', {
+            slidesPerView: 2,
+            spaceBetween: 12,
+            autoHeight: true,
+            breakpoints: {
+                560: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                },
+                1320: {
+                    slidesPerView: 5,
+                    spaceBetween: 30,
+                },
+            }
+        })
     }
 }

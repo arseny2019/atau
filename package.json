@@ -34,11 +34,11 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.7",
-    "gsap": "^3.9.1",
+    "gsap": "^3.12.2",
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
     "smooth-scrollbar": "^8.7.4",
-    "swiper": "^8.4.3",
+    "swiper": "^8.4.7",
     "webp-loader": "^0.6.0"
   }
 }

@@ -1,0 +1,204 @@
+@import "vars.styl"
+
+.new-modal
+  display flex
+  flex-direction column
+  align-items center
+  padding 24px 40px
+  border-radius 24px
+  background-color: #fff
+  font-family: Fira Sans;
+  width 524px
+  z-index 1000
+  opacity 0
+  visibility hidden
+  transition 400ms
+  position fixed
+  left 50%
+  top 50%
+  transform translate(-50%, -50%)
+  max-height 100vh
+  overflow-y auto
+
+  &_feedback
+    padding 24px 16px
+
+    @media $media-mobile
+      padding 8px 16px 24px
+
+  @media $media-mobile
+    padding: 16px
+    max-width calc(100vw - 32px)
+
+  &-overlay
+    z-index 999
+    background-color: rgba(245, 245, 245, 0.8);
+    width: 100vw
+    height: 100vh
+    position fixed
+    left 0
+    top 0
+    display flex
+    overflow-y auto
+    opacity 0
+    visibility hidden
+    transition 400ms
+
+  &__cross
+    width 24px
+    height 24px
+    top: 24px
+    right: 24px
+    display block
+    position absolute
+    cursor pointer
+
+    @media $media-mobile
+      display none
+
+    &::before, &::after
+      content ''
+      position absolute
+      width 18px
+      height 2px
+      top 11px
+      left 50%
+      border-radius 1px
+      transform translateX(-50%) rotate(45deg)
+      background-color $gray-sidebar
+
+    &::after
+      transform translateX(-50%) rotate(-45deg)
+
+  &__title
+    padding 0 64px
+    color: #112B3C;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px; /* 100% */
+    letter-spacing: -0.32px;
+
+    @media $media-mobile
+      padding 0
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 24px; /* 100% */
+      letter-spacing: -0.48px;
+
+  &__text
+    text-align center
+    margin-top: 16px
+    color: #112B3C;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px; /* 127.273% */
+    letter-spacing: -0.22px;
+
+    @media $media-mobile
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px; /* 111.111% */
+      letter-spacing: -0.18px;
+
+  &__text-gray
+    margin-top: 24px
+    color: #878787;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: -0.36px;
+
+    @media $media-mobile
+      font-size: 12px;
+      line-height: 16px; /* 133.333% */
+
+  &__phone
+    margin-top: 8px
+    color: #F66B0E;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: -0.36px;
+
+    @media $media-mobile
+      margin-top: 4px
+      font-weight: 400;
+      letter-spacing: -0.18px;
+
+  &__back
+    margin-top: 24px
+    padding 20px 0
+    height 60px
+    width 176px
+    display none
+    vertical-align center
+    border-radius: 24px;
+    border: 2px solid #F66B0E;
+    color: #F66B0E;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: 0.18px;
+
+    &_margin
+      margin-top: 16px
+
+    @media $media-mobile
+      display inline-block
+
+  &__form
+    margin-top: 24px
+
+  &__submit
+    margin-top: 24px
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+  &__input
+    margin-bottom 16px
+
+  &__privacy
+    margin-top: 16px
+    padding-left: 28px
+    font-family: Fira Sans;
+    position relative
+    display block
+
+    & .accept
+      cursor: pointer;
+
+    &-text
+      color: #878787;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 20px; /* 111.111% */
+      letter-spacing: -0.36px;
+
+      @media $media-mobile
+        font-size: 12px
+        line-height: 16px
+        letter-spacing: 0
+
+      &_blue
+        color #24419B
+        font-weight: 500
+
+        @media $media-mobile
+          font-weight: 700
+
+
+.new-modal-show
+  opacity 1
+  visibility visible
+
